@@ -1,0 +1,14 @@
+name: CICD
+
+on: [push]
+
+jobs:
+  build:
+    uses: homebots/workflows/.github/workflows/docker-build-and-push.yml@master
+    with:
+      org: homebotz
+      imageName: xtensa-qemu
+      defaultBranch: master
+    secrets:
+      username: ${{ secrets.DOCKER_HUB_USERNAME }}
+      password: ${{ secrets.DOCKER_HUB_TOKEN }}
