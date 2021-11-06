@@ -14,4 +14,4 @@ ADD Makefile /home/debian
 WORKDIR /home/debian
 
 ENV PATH=/home/debian/qemu-xtensa/root/bin:$PATH
-CMD [ "make", "run" ]
+CMD [ "make" ]

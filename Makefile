@@ -1,12 +1,11 @@
-TARGET = /home/debian/flash.bin
-DEBUG_FLAGS =
+TARGET 				= /target/firmware.out
 
-ifeq ("$(VERBOSE)","1")
-	DEBUG_FLAGS = -S -s
+
+ifeq ("$(DEBUG)","1")
+	DEBUG_FLAGS = -s -S
 else
+	DEBUG_FLAGS = ''
+endif
 
-.PHONY run
-
-run:
-	@echo "Running $(TARGET)"
+all:
 	qemu-system-xtensa -M esp8266 -nographic -serial stdio -monitor none $(DEBUG_FLAGS) -kernel $(TARGET)
