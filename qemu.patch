@@ -1,0 +1,12 @@
+diff --git a/qga/commands-posix.c b/qga/commands-posix.c
+index f6f3e3cd8e..4851c2adce 100644
+--- a/qga/commands-posix.c
++++ b/qga/commands-posix.c
+@@ -28,6 +28,7 @@
+ #include "qapi/qmp/qerror.h"
+ #include "qemu/queue.h"
+ #include "qemu/host-utils.h"
++#include <sys/sysmacros.h>
+
+ #ifndef CONFIG_HAS_ENVIRON
+ #ifdef __APPLE__
